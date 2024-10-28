@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import Header from "./Header";
-
-function App() {
-  /*
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TinderCards from "./TinderCards";
+/*
 const firebaseConfig = {
   apiKey: "AIzaSyBvW5yztDZVWLjssuvfY_CWKqpHneXzZ98",
   authDomain: "clone-47521.firebaseapp.com",
@@ -14,17 +14,19 @@ const firebaseConfig = {
   measurementId: "G-4ZLL6JB241"
 };
   */
+
+function App() {
   return (
     <div className="App">
-      <h1>Let's build a clone app!</h1>
-
       <Header />
-      {/* Header */}
-      {/* Cards */}
-      {/* Buttons below cards */}
-
-      {/* Chats */}
-      {/* Individual chat screen */}
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<TinderCards />}
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
