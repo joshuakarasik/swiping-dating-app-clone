@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Header from "./Header";
 
 function App() {
   /*
@@ -14,9 +15,17 @@ const firebaseConfig = {
 };
   */
   return (
-    <>
+    <div className="App">
       <h1>Let's build a clone app!</h1>
-    </>
+
+      <Header />
+      {/* Header */}
+      {/* Cards */}
+      {/* Buttons below cards */}
+
+      {/* Chats */}
+      {/* Individual chat screen */}
+    </div>
   );
 }
 
