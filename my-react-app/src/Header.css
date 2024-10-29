@@ -14,3 +14,9 @@
 .header__icon {
   padding: 20px;
 }
+
+img {
+  height: 40px;
+  object-fit: contain;
+  width: 150px;
+}

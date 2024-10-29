@@ -4,6 +4,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import CloudCircleIcon from "@mui/icons-material/CloudCircle";
 import { IconButton } from "@mui/material";
+import flame from "./flame.png";
 
 export default function Header() {
   return (
@@ -15,7 +16,7 @@ export default function Header() {
         />
       </IconButton>
       <img
-        src="./flame.png"
+        src={flame}
         alt="logo"
       />
       <IconButton>
