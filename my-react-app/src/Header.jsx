@@ -14,9 +14,9 @@ export default function Header() {
           fontSize="large"
         />
       </IconButton>
-      <CloudCircleIcon
-        className="header__logo"
-        fontSize="large"
+      <img
+        src="./flame.png"
+        alt="logo"
       />
       <IconButton>
         <ChatBubbleIcon
