@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import TinderCard from "react-tinder-card";
 import "./TinderCards.css";
+import database from "./firebase";
 
 export default function TinderCards() {
   const [people, setPeople] = useState([
@@ -14,6 +15,13 @@ export default function TinderCards() {
       url: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Mark_Zuckerberg_em_setembro_de_2014.jpg",
     },
   ]);
+
+  // piece of code which runs based on a condition
+  useEffect(() => {
+    // this is where the code runs...
+    // this will run ONCE when the component loads, and never again
+    database.collection("people").onSnapshot();
+  }, []);
 
   return (
     <div>
