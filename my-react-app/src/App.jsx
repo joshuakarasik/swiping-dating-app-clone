@@ -4,12 +4,13 @@ import Header from "./Header";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TinderCards from "./TinderCards";
 import SwipeButtons from "./SwipeButtons";
+import Chats from "./Chats";
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Router>
+        <Header />
         <Routes>
           <Route
             path="/"
@@ -20,6 +21,10 @@ function App() {
               </>
             }
           />
+          <Route
+            path="/chats"
+            element={<Chats />}
+          ></Route>
         </Routes>
       </Router>
     </div>
