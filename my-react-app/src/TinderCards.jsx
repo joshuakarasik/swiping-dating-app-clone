@@ -1,26 +1,20 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TinderCard from "react-tinder-card";
 import "./TinderCards.css";
-import database from "./firebase";
+import { collection, onSnapshot } from "firebase/firestore";
+import database from "./firebase"; // Import the database from your firebase config
 
 export default function TinderCards() {
-  const [people, setPeople] = useState([
-    {
-      name: "Steve Jobs",
-      url: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg",
-    },
-    {
-      name: "Mark Zuckerberg",
-      url: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Mark_Zuckerberg_em_setembro_de_2014.jpg",
-    },
-  ]);
+  const [people, setPeople] = useState([]);
 
-  // piece of code which runs based on a condition
   useEffect(() => {
-    // this is where the code runs...
-    // this will run ONCE when the component loads, and never again
-    database.collection("people").onSnapshot();
+    // Use onSnapshot to listen to real-time updates
+    const unsubscribe = onSnapshot(collection(database, "people"), (snapshot) => {
+      setPeople(snapshot.docs.map((doc) => doc.data()));
+    });
+
+    // Clean up the listener on unmount
+    return () => unsubscribe();
   }, []);
 
   return (
