@@ -3,7 +3,13 @@ import React from "react";
 function Chats() {
   return (
     <div>
-      <h2>Yo</h2>
+      <div>
+        <p>Hi this is John</p>
+      </div>
+      <div>
+        <p>Hi this is Bonnie</p>
+      </div>
+      <p>Hi this is Wolfang</p>
     </div>
   );
 }

@@ -16,10 +16,12 @@ export default function Header() {
           fontSize="large"
         />
       </IconButton>
-      <img
-        src={flame}
-        alt="logo"
-      />
+      <Link to="/">
+        <img
+          src={flame}
+          alt="logo"
+        />
+      </Link>
       <Link to="/chats">
         <IconButton>
           <ChatBubbleIcon
