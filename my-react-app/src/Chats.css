@@ -1,11 +1,9 @@
-/* Container for the chat list */
 .chats {
   display: flex;
   flex-direction: column;
   padding: 20px;
 }
 
-/* Individual chat item styling */
 .chat {
   display: flex;
   align-items: center;
@@ -17,7 +15,6 @@
   cursor: pointer;
 }
 
-/* New container to isolate avatar styling */
 .chat__avatarContainer {
   display: flex;
   align-items: center;
@@ -28,10 +25,9 @@
   flex-shrink: 0;
 }
 
-/* Profile picture styling */
 .chat__image {
-  width: 100% !important; /* Fill the container */
-  height: 100% !important; /* Fill the container */
-  border-radius: 50% !important; /* Ensures circular shape */
-  object-fit: cover !important; /* Prevents distortion */
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
 }
