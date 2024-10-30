@@ -1,5 +1,5 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import Avatar from "@mui/material/Avatar";
 import "./ChatScreen.css";
 
 function ChatScreen() {
@@ -16,15 +16,21 @@ function ChatScreen() {
         "https://pyxis.nymag.com/v1/imgs/a90/eb9/e35cd56b7ca7f8dc6d41defbcf1c41453f-FINALSarah.2x.rvertical.w570.jpg",
       message: "How are you doing?",
     },
+    {
+      message: "I'm good, thanks!",
+    },
   ]);
 
   return (
     <div className="chatScreen">
       <h2>Hi!</h2>
       <p className="chatScreen__timestamp">YOU MATCHED WITH ELLEN ON 10/8/14</p>
-      {messages.map((message) => {
+      {messages.map((message, index) =>
         message.name ? (
-          <div className="chatScreen__message">
+          <div
+            key={index}
+            className="chatScreen__message"
+          >
             <Avatar
               className="chatScreen__image"
               alt={message.name}
@@ -33,11 +39,14 @@ function ChatScreen() {
             <p className="chatScreen__text">{message.message}</p>
           </div>
         ) : (
-          <div className="chatScreen__message">
-            <p className="chatScreen__textUser">{message}</p>
+          <div
+            key={index}
+            className="chatScreen__message"
+          >
+            <p className="chatScreen__textUser">{message.message}</p>
           </div>
-        );
-      })}
+        )
+      )}
     </div>
   );
 }
