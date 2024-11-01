@@ -3,6 +3,7 @@ import Avatar from "@mui/material/Avatar";
 import "./ChatScreen.css";
 
 function ChatScreen() {
+  const [input, setInput] = useState("");
   const [messages, setMessages] = useState([
     {
       name: "Ellen",
@@ -20,6 +21,12 @@ function ChatScreen() {
       message: "I'm good, thanks!",
     },
   ]);
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    setMessages([...messages, { message: input }]);
+    setInput("");
+  };
 
   return (
     <div className="chatScreen">
@@ -47,6 +54,28 @@ function ChatScreen() {
           </div>
         )
       )}
+
+      <div>
+        <form
+          action=""
+          className="chatScreen__input"
+        >
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className="chatScreen__inputField"
+            type="text"
+            placeholder="Type a message...."
+          />
+          <button
+            onClick={handleSend}
+            type="submit"
+            className="inputButton"
+          >
+            SEND
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
